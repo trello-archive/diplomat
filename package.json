@@ -1,0 +1,35 @@
+{
+  "name": "tardis",
+  "version": "1.0.0",
+  "description": "A Slack bot for making international collaboration and communication more seamless",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trello/tardis.git"
+  },
+  "keywords": [
+    "slack",
+    "bot",
+    "tardis",
+    "international",
+    "collaboration",
+    "timezones",
+    "temperature",
+    "units",
+    "metric",
+    "imperial",
+    "conversion"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/trello/tardis/issues"
+  },
+  "homepage": "https://github.com/trello/tardis#readme",
+  "dependencies": {
+    "botkit": "^0.2.2"
+  }
+}
