@@ -3,12 +3,12 @@ const { convertToC, convertToF } = require('../modules/temperature.js');
 
 const replyForCelcius = (bot, message, celsius) => {
   const fahrenheit = convertToF(parseFloat(celsius));
-  bot.reply(message, `${celsius}ºC / ${fahrenheit}ºF`);
+  bot.reply(message, `${celsius}°C / ${fahrenheit}°F`);
 };
 
 const replyForFahrenheit = (bot, message, fahrenheit) => {
   const celsius = convertToC(parseFloat(fahrenheit));
-  bot.reply(message, `${celsius}ºC / ${fahrenheit}ºF`);
+  bot.reply(message, `${celsius}°C / ${fahrenheit}°F`);
 };
 
 const convertImplicitTemperature = (redisClient, bot, message) => {
@@ -44,8 +44,10 @@ module.exports = [
       'mention',
     ],
     messages: [
-      '(\\d+(\\.\\d+)?) degrees (celsius|fahrenheit)',
-      '(\\d+(\\.\\d+)?)º(c|f)',
+      /(-?\d+(\.\d+)?) degrees (celsius|fahrenheit)/i,
+      /(-?\d+(\.\d+)?) degrees (c|f)\s*$/i,
+      /(-?\d+(\.\d+)?)°(c|f)/i, // char code 176
+      /(-?\d+(\.\d+)?)º(c|f)/i, // char code 186
     ],
   },
   {
@@ -57,8 +59,9 @@ module.exports = [
       'mention',
     ],
     messages: [
-      '(\\d+(\\.\\d+)?) degrees',
-      '(\\d+(\\.\\d+)?)º',
+      /(-?\d+(\.\d+)?) degrees/i,
+      /(-?\d+(\.\d+)?)°/i, // char code 176
+      /(-?\d+(\.\d+)?)º/i, // char code 186
     ],
   },
 ];

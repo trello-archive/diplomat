@@ -1,7 +1,9 @@
 const Botkit = require('botkit');
 const redis = require('redis');
 const bluebird = require('bluebird');
+
 const behaviors = require('./behaviors');
+const crons = require('./crons');
 
 bluebird.promisifyAll(redis.RedisClient.prototype);
 bluebird.promisifyAll(redis.Multi.prototype);
@@ -18,3 +20,4 @@ const bot = slackbotController.spawn({
 });
 
 behaviors.setUpBehaviors(slackbotController, redisClient);
+crons.setUpCrons(bot, redisClient);

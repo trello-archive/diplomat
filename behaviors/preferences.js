@@ -38,11 +38,11 @@ module.exports = [
   {
     action: changeTemperatureSetting,
     events: [ 'direct_message' ],
-    messages: [ 'use (c|f)' ],
+    messages: [ /use (c|f)/i ],
   },
   {
     action: getTemperatureSetting,
     events: [ 'direct_message' ],
-    messages: [ 'temperature setting' ],
+    messages: [ /temperature setting/i ],
   }
 ];
