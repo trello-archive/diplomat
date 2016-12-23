@@ -4,6 +4,7 @@
   "description": "A Slack bot for making international collaboration and communication more seamless.",
   "main": "index.js",
   "scripts": {
+    "start": "node bot.js",
     "test": "mocha -c --recursive"
   },
   "repository": {
